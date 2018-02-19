@@ -13,7 +13,7 @@ properties(
           name: 'SSH_USERNAME'
         ),
         string(
-          defaultValue: 'test-host-name.bsn.redhat.com',
+          defaultValue: 'kernelci-04.khw.lab.eng.bos.redhat.com',
           description: 'Hostname for ssh connection.',
           name: 'SSH_HOSTNAME'
         )
@@ -37,5 +37,10 @@ node("provisioner") {
   sh """
     ssh -i ~/.ssh/id_rsa ${params.USERNAME}@${params.HOSTNAME};
     echo Hello World
+    cd /home/openshift/openshift-ansible
+    git pull
+    cd ..
+    ansible all -m ping --private-key=vminstall.key
+    ansible all -m 'shell systemctl start docker' --private-key=vminstall.key    
   """
 }
