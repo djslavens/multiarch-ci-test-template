@@ -22,16 +22,16 @@ properties(
   ]
 )
 
-//node("provisioner") {
+node("provisioner") {
   // Install ssh keys
-  //withCredentials([file(credentialsId: params.SSHPRIVKEYCREDENTIALID, variable: 'SSHPRIVKEY')]) {
-  //  env.HOME = "/home/jenkins"
-  //  sh """
-  //    mkdir -p ~/.ssh
-  //    cp ${SSHPRIVKEY} ~/.ssh/id_rsa
-  //    chmod 600 ~/.ssh/id_rsa
-  //  """
-  //}
+  withCredentials([file(credentialsId: params.SSHPRIVKEYCREDENTIALID, variable: 'SSHPRIVKEY')]) {
+    env.HOME = "/home/jenkins"
+    sh """
+      mkdir -p ~/.ssh
+      cp ${SSHPRIVKEY} ~/.ssh/id_rsa
+      chmod 600 ~/.ssh/id_rsa
+    """
+  }
 
   // Test starts here
   sh """
