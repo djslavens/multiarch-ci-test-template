@@ -23,7 +23,7 @@ properties(
 )
 
 //node("provisioner") {
-none("master") {
+node("master") {
   // Install ssh keys
   withCredentials([file(credentialsId: params.SSHPRIVKEYCREDENTIALID, variable: 'SSHPRIVKEY')]) {
     env.HOME = "/home/jenkins"
