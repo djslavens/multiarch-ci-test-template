@@ -36,7 +36,7 @@ node("master") {
 
   // Test starts here
   sh """
-    ping ${SSH_HOSTNAME}
+    ping -c 4 ${SSH_HOSTNAME}
     ssh -i ~/.ssh/id_rsa ${params.SSH_USERNAME}@${params.SSH_HOSTNAME};
     echo Hello World
     cd /home/openshift/openshift-ansible
