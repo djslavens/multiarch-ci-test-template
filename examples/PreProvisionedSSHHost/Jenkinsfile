@@ -41,7 +41,9 @@ node("provisioner-v0.3") {
       whoami
       mkdir -p ~/.ssh
       cp ${SSHPRIVKEY} ~/.ssh/id_rsa
+      cp ${SSHPUBKEY} ~/.ssh/id_rsa.pub
       chmod 600 ~/.ssh/id_rsa
+      chmod 644 ~/.ssh/id_rsa.pub
     """
   }
 
