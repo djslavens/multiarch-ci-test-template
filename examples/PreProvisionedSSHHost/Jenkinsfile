@@ -34,7 +34,8 @@ properties(
 
 node("provisioner-v0.3") {
   // Install ssh keys
-  withCredentials([file(credentialsId: params.SSHPRIVKEYCREDENTIALID, variable: 'SSHPRIVKEY')]) {
+  withCredentials([file(credentialsId: params.SSHPRIVKEYCREDENTIALID, variable: 'SSHPRIVKEY'),
+                  file(credentialsId: params.SSHPUBKEYCREDENTIALID, variable: 'SSHPUBKEY')]) {
     env.HOME = "/home/jenkins"
     sh """
       whoami
