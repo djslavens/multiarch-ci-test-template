@@ -51,7 +51,7 @@ node("provisioner-v0.3") {
   sh """
     ping -c 4 ${SSH_HOSTNAME}
     echo ${params.SSH_USERNAME}@${params.SSH_HOSTNAME}
-    ssh -T -i ~/.ssh/id_rsa ${params.SSH_USERNAME}@${params.SSH_HOSTNAME};
+    ssh -T -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${params.SSH_USERNAME}@${params.SSH_HOSTNAME};
     echo 'Hello World'
     cd /home/openshift/openshift-ansible
     git pull
