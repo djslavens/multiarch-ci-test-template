@@ -8,6 +8,16 @@ properties(
           name: 'SSHPRIVKEYCREDENTIALID'
         ),
         string(
+          defaultValue: 'SSHPUBKEY',
+          description: 'SSH public key Jenkins credential ID for Beaker/SSH operations.',
+          name: 'SSHPUBKEYCREDENTIALID'
+        ),
+        string(
+          defaultValue: 'KEYTAB',
+          description: 'Kerberos keytab file Jenkins credential ID for Beaker/SSH operations.',
+          name: 'KEYTABID'
+        ),
+        string(
           defaultValue: 'root',
           description: 'Username for ssh connection.',
           name: 'SSH_USERNAME'
