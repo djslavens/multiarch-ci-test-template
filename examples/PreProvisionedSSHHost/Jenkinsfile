@@ -50,7 +50,7 @@ node("provisioner-v0.3") {
 
   // Test starts here
   sh """
-    ping -c 4 ${SSH_HOSTNAME}
+    ping -c 2 ${SSH_HOSTNAME}
     echo ${params.SSH_USERNAME}@${params.SSH_HOSTNAME}
     ssh -T -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${params.SSH_USERNAME}@${params.SSH_HOSTNAME};
     echo 'Hello World'
