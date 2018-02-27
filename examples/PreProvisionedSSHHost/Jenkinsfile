@@ -57,10 +57,12 @@ node("provisioner-v0.3") {
     hostname
     pwd
     whoami
-    cd /home/openshift/openshift-ansible
-    git pull
-    cd ..
-    ansible all -m ping --private-key=vminstall.key
-    ansible all -m 'shell systemctl start docker' --private-key=vminstall.key    
+    ls -la /etc/ansible
+    cat /etc/ansible/ansible.cfg
+    #cd /home/openshift/openshift-ansible
+    #git pull
+    #cd ..
+    #ansible all -m ping --private-key=vminstall.key
+    #ansible all -m 'shell systemctl start docker' --private-key=vminstall.key    
   """
 }
