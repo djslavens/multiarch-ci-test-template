@@ -57,8 +57,7 @@ node("provisioner-v0.3") {
     hostname
     pwd
     whoami
-    env
-    #echo $ANSIBLE_CONFIG
+    which ansible
     #ls -la ~/
     #ansible --help
     #cat /etc/ansible/ansible.cfg
