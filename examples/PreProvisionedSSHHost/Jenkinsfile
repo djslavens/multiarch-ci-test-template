@@ -57,8 +57,9 @@ node("provisioner-v0.3") {
     hostname
     pwd
     whoami
-    ls -la ~/
-    ansible --help
+    env | grep ansible
+    #ls -la ~/
+    #ansible --help
     #cat /etc/ansible/ansible.cfg
     #cd /home/openshift/openshift-ansible
     #git pull
