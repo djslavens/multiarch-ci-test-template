@@ -58,6 +58,7 @@ node("provisioner-v0.3") {
     pwd
     whoami
     which ansible
+    yum install glusterfs glusterfs-fuse
     #ls -la ~/
     #ansible --help
     #cat /etc/ansible/ansible.cfg
