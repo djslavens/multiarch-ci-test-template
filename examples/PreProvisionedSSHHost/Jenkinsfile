@@ -53,7 +53,6 @@ node("provisioner-v0.3") {
     ping -c 2 ${SSH_HOSTNAME}
     echo ${params.SSH_USERNAME}@${params.SSH_HOSTNAME}
     ssh -T -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${params.SSH_USERNAME}@${params.SSH_HOSTNAME};
-    echo 'Hello World'
     hostname
     pwd
     whoami
@@ -66,10 +65,8 @@ node("provisioner-v0.3") {
     #ls -la ~/
     #ansible --help
     #cat /etc/ansible/ansible.cfg
-    #cd /home/openshift/openshift-ansible
-    #git pull
-    #cd ..
     #ansible all -m ping --private-key=vminstall.key
     #ansible all -m 'shell systemctl start docker' --private-key=vminstall.key    
+    #echo 'Hello World'
   """
 }
