@@ -59,10 +59,10 @@ node("provisioner-v0.3") {
     whoami
     which ansible
     ansible --version
-    ansible --private-key=vminstall.key -m ping all
-    ansible --private-key=vminstall.key -m shell -a 'hostname' all
-    ansible --private-key=vminstall.key -m shell -a 'df -h' all
-    ansible --private-key=vminstall.key -m shell -a 'whoami' all
+    ansible -i 'localhost' --private-key=vminstall.key -m ping all
+    #ansible --private-key=vminstall.key -m shell -a 'hostname' all
+    #ansible --private-key=vminstall.key -m shell -a 'df -h' all
+    #ansible --private-key=vminstall.key -m shell -a 'whoami' all
     #ls -la ~/
     #ansible --help
     #cat /etc/ansible/ansible.cfg
